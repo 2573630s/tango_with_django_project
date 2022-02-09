@@ -28,14 +28,14 @@ def populate():
                    {'title': 'Flask',
                     'url': 'http://flask.pocoo.org'}]
 
-    cats = {'Python': {'pages': python_pages, 'views': 0, 'likes': 0},
-            'Django': {'pages': django_pages, 'views': 0, 'likes': 0},
-            'Other Frameworks': {'pages': other_pages, 'views': 0, 'likes': 0}}
+    cats = {'Python': {'pages': python_pages, 'views': 42, 'likes': 0},
+            'Django': {'pages': django_pages, 'views': 67, 'likes': 0},
+            'Other Frameworks': {'pages': other_pages, 'views': 98, 'likes': 0}}
 
     for cat, cat_data in cats.items():
         c = add_cat(cat, cat_data["views"], cat_data["likes"])
         for p in cat_data['pages']:
-            add_page(c, p['title'], p['url'], p)
+            add_page(c, p['title'], p['url'], p['views'])
 
     for c in Category.objects.all():
         for p in Page.objects.filter(category=c):
