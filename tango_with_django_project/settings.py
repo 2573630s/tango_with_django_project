@@ -127,3 +127,5 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
+
+#SESSION_EXPIRE_AT_CLOSE = True
